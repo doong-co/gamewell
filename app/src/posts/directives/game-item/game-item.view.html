@@ -1,0 +1,8 @@
+<div layout="column" style="background-color: black">
+  <div ng-if="!canPlayGame" class="thumbnail" flex>
+    <img ng-src="{{game.thumbnail}}" alt="">
+  </div>
+  <div class="iframe-wraper" ng-if="canPlayGame" flex layout="column">
+    <iframe ng-src="{{trustUrl(game.url)}}" frameborder="0" flex></iframe>
+  </div>
+</div>

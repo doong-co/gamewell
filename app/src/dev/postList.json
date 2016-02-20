@@ -8,6 +8,22 @@
       "avatar": "/content/clark-kent.jpg",
       "cover": "/content/cover-photo2.jpg"
     },
+    "content": {
+      "thumbnail": "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/4373/45093/ESR5DQ-image-50.jpg",
+      "url": "http://s3-eu-west-1.amazonaws.com/apps.playcanvas.com/TwvzLuxT/index.html"
+    },
+    "likes": 0,
+    "type": 1
+  },
+  {
+    "user": {
+      "username": "clark",
+      "name": "Clark Kent",
+      "position": "Reporter",
+      "location": "Metropolis",
+      "avatar": "/content/clark-kent.jpg",
+      "cover": "/content/cover-photo2.jpg"
+    },
     "content": "Superman's powers rely on his cells' ability to absorb and metabolize solar energy from yellow stars like Earth's sun.",
     "likes": 0
   },
