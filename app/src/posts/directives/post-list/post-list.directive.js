@@ -14,6 +14,20 @@
           };
 
           function init(scope, element, attrs) {
+
+            scope.getHowLongAgo = function(post) {
+              if(!post._howLongAgo) {
+                if(post.createdAt) {
+                  post._howLongAgo = moment(post.createdAt).fromNow();
+                }
+                else {
+                  post._howLongAgo = 'A lifetime ago';
+                }
+              }
+              
+              return post._howLongAgo;
+            }
+
             /**
              * Pass to scope
              * @type {Function}

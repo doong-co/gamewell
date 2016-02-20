@@ -1,4 +1,5 @@
 <md-list class="feed">
+  
    <md-list-item class="md-3-line" ng-repeat="post in feed" ng-class="{'is-new': post.isNew}" 
       style="margin-top:15px">
 		   <a msp-profile-link="timeline/{{post.user.username}}" href="#">
@@ -15,10 +16,15 @@
                <strong ng-if="post.type === 1" style="font-size: 13px">
                   {{post.content.name}}
                </strong>
+               
    		  	</h3>
-   		  	<p ng-if="post.type !== 1" class="content">
+          <p style="font-weight:200; font-size:11px; 
+            margin-top: 8px;
+            margin-bottom: 10px;">{{getHowLongAgo(post)}}</p>
+   		  	<p ng-if="post.type !== 1" class="content" >
    		  		{{post.content}}
    		  	</p>
+            
             <p ng-if="post.type === 1" class="content" style="font-weight:200">
                {{post.content.desc}}
             </p>
