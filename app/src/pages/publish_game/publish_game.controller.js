@@ -37,12 +37,24 @@
         content: self.project,
         type: 1
       };
-
-      userServices.publishGame(post)
-        .then(function(post) {
-          $mdToast.showSimple(post.content.name + ' published');
-          $location.url('/'); //go to feed
-        });
+      if(self.thumbnailFile) {
+        var reader  = new FileReader();
+        reader.addEventListener("load", function () {
+          post.content.thumbnail = reader.result;
+          userServices.publishGame(post)
+          .then(function(post) {
+            $mdToast.showSimple(post.content.name + ' published');
+            $location.url('/'); //go to feed
+          });
+        }, false);
+        reader.readAsDataURL(self.thumbnailFile[0].lfFile);
+      } else {
+        userServices.publishGame(post)
+          .then(function(post) {
+            $mdToast.showSimple(post.content.name + ' published');
+            $location.url('/'); //go to feed
+          });
+      }
     }
   }
 })();

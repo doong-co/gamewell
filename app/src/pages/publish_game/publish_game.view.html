@@ -41,6 +41,12 @@
               <div ng-message="md-maxlength">The name has to be less than 300 characters long.</div>
             </div>
           </md-input-container>
+          <div layout-gt-sm="row">
+            <md-input-container class="md-block" flex-gt-sm>
+              <lf-ng-md-file-input name="thumbnail" lf-placeholder="Upload a splash image" lf-files="page.thumbnailFile"></lf-ng-md-file-input>
+            </md-input-container>
+            <div flex-gt-sm></div>
+          </div>
           <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
             <div flex></div>
             <md-button type="submit" class="md-raised md-primary">Submit</md-button>

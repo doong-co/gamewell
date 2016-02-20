@@ -44,7 +44,11 @@
             return post.user.username === params.username;
           });
 
-          deferred.resolve(timeline);
+          endPoints().post.query(function(posts) {
+            deferred.resolve(posts.concat(timeline));
+          }, function() {
+            deferred.resolve(timeline);
+          });
         });
 
         return deferred.promise;
