@@ -97,7 +97,7 @@
 
                     $timeout(function() {
                         if(scope.loading) {
-                          spinner = new Spinner({
+                          spinner = spinner || new Spinner({
                             lines: 9 // The number of lines to draw
                           , length: 0 // The length of each line
                           , width: 7 // The line thickness
@@ -118,7 +118,9 @@
                           , shadow: false // Whether to render a shadow
                           , hwaccel: false // Whether to use hardware acceleration
                           , position: 'absolute' // Element positioning
-                          }).spin(element[0]);
+                          });
+                          
+                          spinner.spin(element[0]);
                           
                           element.find('.thumbnail').css('opacity','0.5');
                         }
@@ -130,7 +132,6 @@
                           if(spinner) {
                             spinner.stop();
                             element.find('.thumbnail').css('opacity','0');
-                            spinner = null;
                           }
                         })
                       });
@@ -146,7 +147,6 @@
                 if(spinner) {
                   spinner.stop();
                   element.find('.thumbnail').css('opacity','1');
-                  spinner = null;
                 }
                 iframe = null;
                 scope.gameStarted = false;
