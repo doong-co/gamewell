@@ -22,7 +22,7 @@
      */
     function endPoints() {
       return {
-        list: $resource('/src/dev/menuItems.json')
+        list: $resource('src/dev/menuItems.json')
       }
     }
   }

@@ -31,7 +31,7 @@ describe('menuServices tests', function() {
     compile = $compile;
     httpBackend = $httpBackend;
 
-    $httpBackend.whenGET('/src/dev/menuItems.json').respond(mockList);
+    $httpBackend.whenGET('src/dev/menuItems.json').respond(mockList);
   }));
 
   it('Should have the appropriate methods', inject(function($rootScope) {

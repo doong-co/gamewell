@@ -57,9 +57,9 @@ describe('userServices tests', function() {
     compile = $compile;
     httpBackend = $httpBackend;
 
-    $httpBackend.whenGET('/src/dev/friendList.json').respond(mockList);
-    $httpBackend.whenGET('/src/dev/userList.json').respond(mockList);
-    $httpBackend.whenGET('/src/dev/currentUser.json').respond(mockUser);
+    $httpBackend.whenGET('src/dev/friendList.json').respond(mockList);
+    $httpBackend.whenGET('src/dev/userList.json').respond(mockList);
+    $httpBackend.whenGET('src/dev/currentUser.json').respond(mockUser);
   }));
 
   it('Should have the appropriate methods', inject(function($rootScope) {

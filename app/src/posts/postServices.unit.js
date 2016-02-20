@@ -65,8 +65,8 @@ describe('postServices tests', function() {
     compile = $compile;
     httpBackend = $httpBackend;
 
-    $httpBackend.whenGET('/src/dev/postList.json').respond(mockList);
-    $httpBackend.whenGET('/src/dev/newPost.json').respond(mockPost);
+    $httpBackend.whenGET('src/dev/postList.json').respond(mockList);
+    $httpBackend.whenGET('src/dev/newPost.json').respond(mockPost);
   }));
 
   it('Should have the appropriate methods', inject(function($rootScope) {

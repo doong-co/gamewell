@@ -53,9 +53,9 @@
      */
     function endPoints() {
       return {
-        list: $resource('/src/dev/userList.json'),
-        friends: $resource('/src/dev/friendList.json'),
-        currentUser: $resource('/src/dev/currentUser.json')
+        list: $resource('src/dev/userList.json'),
+        friends: $resource('src/dev/friendList.json'),
+        currentUser: $resource('src/dev/currentUser.json')
       }
     }
 

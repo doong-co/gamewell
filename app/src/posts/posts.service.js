@@ -91,8 +91,8 @@
      */
     function endPoints() {
       return {
-        list: $resource('/src/dev/postList.json'),
-        newPost: $resource('/src/dev/newPost.json')
+        list: $resource('src/dev/postList.json'),
+        newPost: $resource('src/dev/newPost.json')
       }
     }
 
