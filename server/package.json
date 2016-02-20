@@ -1,0 +1,22 @@
+{
+  "name": "kdq-gamewell",
+  "private": true,
+  "version": "0.0.0",
+  "description": "a Sails application",
+  "keywords": [],
+  "dependencies": {
+    "include-all": "~0.1.3",
+    "rc": "~0.5.0",
+    "sails": "~0.11.4",
+    "sails-disk": "~0.10.0",
+    "waterlock": "^0.1.0",
+    "waterlock-local-auth": "0.0.6"
+  },
+  "scripts": {
+    "debug": "node debug app.js",
+    "start": "node app.js"
+  },
+  "main": "app.js",
+  "author": "tamdao",
+  "license": ""
+}
