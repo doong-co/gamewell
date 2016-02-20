@@ -5,11 +5,20 @@
          </a>
 			<div class="md-list-item-text" layout="column">
    		  	<h3 class="user">
-   		  		<a msp-profile-link="timeline/{{post.user.username}}" href="#">{{post.user.name}}</a>
+   		  		<strong>
+                  <a msp-profile-link="timeline/{{post.user.username}}" href="#">{{post.user.name}}</a>
+               </strong> 
+               <span style="color: gray">
+                  <span ng-if="post.type === 1" style="font-size: 13px">published</span>
+               </span>
+               <strong ng-if="post.type === 1" style="font-size: 13px">
+                  {{post.content.name}}
+               </strong>
    		  	</h3>
-   		  	<p ng-if="!post.type" class="content">
+   		  	<p ng-if="post.type !== 1" class="content">
    		  		{{post.content}}
    		  	</p>
+            
             <kdq-game-item class="content game" kdq-game="post.content" ng-if="post.type === 1"></kdq-game-item>
    		  	<p class="actions" msp-ripple>
    		  		<a><md-icon md-svg-src="assets/svg/thumb.svg"></md-icon> Like ({{post.likes}})</a>

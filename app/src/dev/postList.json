@@ -79,7 +79,8 @@
     },
     "content": {
       "thumbnail": "http://cdn.tutorialzine.com/wp-content/uploads/2015/01/missilegame-1024x640.jpg",
-      "url": "http://missile-game.bwhmather.com/"
+      "url": "http://missile-game.bwhmather.com/",
+      "name": "Missle Game"
     },    
     
     "likes": 40,
@@ -96,7 +97,8 @@
     },
     "content": {
       "thumbnail": "http://img.cdn.famobi.com/portal/html5games/images/tmp/ArcadeGolfNeonTeaser.jpg?v=0.1.32-1068e84e",
-      "url": "http://play.famobi.com/arcade-golf-neon"
+      "url": "http://play.famobi.com/arcade-golf-neon",
+      "name": "Arcade Golf Neon"
     },
     
     "likes": 4,
