@@ -23,6 +23,8 @@
         endPoints().list.query(function(postList) {
           endPoints().post.query(function(posts) {
             deferred.resolve(posts.concat(postList));
+          }, function() {
+            deferred.resolve(postList);
           });
         });
 
@@ -99,7 +101,7 @@
     function endPoints() {
       return {
         list: $resource('src/dev/postList.json'),
-        post: $resource(API_URL + '/post'),
+        post: $resource(API_URL + '/post?sort=createdAt%20DESC'),
         newPost: $resource('src/dev/newPost.json')
       }
     }
