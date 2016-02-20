@@ -4,6 +4,20 @@ Common Styles
 ==========================
 **/
 
+body.game-fullscreen {
+  overflow: hidden;
+}
+
+.fullscreen {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: black;
+  z-index: 11111;
+}
+
 html, body {
   font-family: 'Roboto', sans-serif;
   font-size:14px;
@@ -162,9 +176,13 @@ Post-list Styles
 .feed md-list-item.md-3-line .md-list-item-text div.content.game .thumbnail {
   margin: 3rem auto;
 }
-.feed md-list-item.md-3-line .md-list-item-text div.content.game .thumbnail img{
+.feed md-list-item.md-3-line .md-list-item-text div.content.game .thumbnail img {
   height: 100%;
   width: 100%;
+}
+.feed md-list-item.md-3-line .md-list-item-text div.content.game .md-button {
+  width: auto;
+  text-align: center;
 }
 .feed md-list-item.md-3-line .md-list-item-text {
   margin: 0;

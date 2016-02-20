@@ -2,7 +2,11 @@
   <div ng-if="!canPlayGame" class="thumbnail" flex>
     <img ng-src="{{game.thumbnail}}" alt="">
   </div>
-  <div class="iframe-wraper" ng-if="canPlayGame" flex layout="column">
+  <div kdq-game-full-screen="canFullScreen" class="iframe-wraper" ng-if="canPlayGame" flex layout="column">
+    <div layout="row">
+      <div flex></div>s
+      <md-button ng-click="canFullScreen = !canFullScreen" class="md-raised btn-fullscreen"><span ng-if="canFullScreen">fullscreen</span><span ng-if="!canFullScreen">close</span></md-button>
+    </div>
     <iframe ng-src="{{trustUrl(game.url)}}" frameborder="0" flex></iframe>
   </div>
 </div>
