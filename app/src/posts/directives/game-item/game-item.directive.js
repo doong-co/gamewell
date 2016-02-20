@@ -131,7 +131,10 @@
               $timeout(function() {
                 scope.canPlayGame = false;
                 loading = false;
-                spinner = false;
+                if(spinner) {
+                  spinner.stop();
+                  spinner = null;
+                }
                 iframe = null;
                 gameStarted = false;
               });
