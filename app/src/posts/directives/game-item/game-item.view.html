@@ -1,6 +1,12 @@
 <div layout="column" style="background-color: black">
-  <div ng-if="!canPlayGame" class="thumbnail" flex layout="column"
-    style='background: url("{{game.thumbnail}}") no-repeat center center; background-size: cover'
+  <div ng-if="!gameStarted || loading" class="thumbnail" flex layout="column"
+    style='background: url("{{game.thumbnail}}") no-repeat center center; background-size: cover;
+    position: absolute;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    '
   >
     <!-- <img ng-src="{{game.thumbnail}}" alt="" flex> -->
   </div>

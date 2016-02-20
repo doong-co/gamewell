@@ -61,10 +61,11 @@
           scope.trustUrl = trustUrl;
 
           var timeoutId = undefined;
-          var loading = false;
           var spinner = null;
           var iframe = null;
-          var gameStarted = true;
+
+          scope.loading = false;
+          scope.gameStarted = true;
 
           $(window).scroll(function() {
             
@@ -76,9 +77,15 @@
 
             if (scrollTop < pos.top && scrollTop + windowHeight > pos.top + elementHeight) {
 
-              if(!gameStarted) {
-                gameStarted = true;
-                loading = true;
+              if(!scope.gameStarted) {
+                scope.gameStarted = true;
+                scope.loading = true;
+
+                // don't remove
+                scope.$evalAsync(function() {
+                  scope.gameStarted = true;
+                  scope.loading = true;  
+                })
                 
                 timeoutId = $timeout(function() {  
                   scope.canPlayGame = true;
@@ -87,8 +94,9 @@
                   $timeout(function() {
                     iframe = element.find('iframe');
 
+
                     $timeout(function() {
-                        if(loading) {
+                        if(scope.loading) {
                           spinner = new Spinner({
                             lines: 9 // The number of lines to draw
                           , length: 0 // The length of each line
@@ -111,16 +119,20 @@
                           , hwaccel: false // Whether to use hardware acceleration
                           , position: 'absolute' // Element positioning
                           }).spin(element[0]);
+                          
+                          element.find('.thumbnail').css('opacity','0.5');
                         }
                       }, 60);
                     
                       iframe.on('load', function() {
-                        loading = false;
-                        if(spinner) {
-                          spinner.stop();
-                          spinner = null;
-                        }
-                        
+                        scope.$evalAsync(function() {
+                          scope.loading = false;
+                          if(spinner) {
+                            spinner.stop();
+                            element.find('.thumbnail').css('opacity','0');
+                            spinner = null;
+                          }
+                        })
                       });
                   });
                 }, 250);
@@ -130,13 +142,14 @@
               $timeout.cancel(timeoutId);
               $timeout(function() {
                 scope.canPlayGame = false;
-                loading = false;
+                scope.loading = false;
                 if(spinner) {
                   spinner.stop();
+                  element.find('.thumbnail').css('opacity','1');
                   spinner = null;
                 }
                 iframe = null;
-                gameStarted = false;
+                scope.gameStarted = false;
               });
             }
           });
