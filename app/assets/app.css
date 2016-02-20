@@ -179,7 +179,6 @@ Post-list Styles
 .feed md-list-item.md-3-line .md-list-item-text div.content.game .thumbnail img {
   max-height: 100%;
   max-width: 100%;
-  overflow: hidden;
 }
 .feed md-list-item.md-3-line .md-list-item-text div.content.game .md-button {
   width: auto;
