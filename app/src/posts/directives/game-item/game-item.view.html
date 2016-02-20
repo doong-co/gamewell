@@ -1,6 +1,6 @@
 <div layout="column" style="background-color: black">
-  <div ng-if="!canPlayGame" class="thumbnail" flex>
-    <img ng-src="{{game.thumbnail}}" alt="">
+  <div ng-if="!canPlayGame" class="thumbnail" flex layout="column">
+    <img ng-src="{{game.thumbnail}}" alt="" flex>
   </div>
   <div kdq-game-full-screen="canFullScreen" class="iframe-wraper" ng-if="canPlayGame" flex layout="column">
     <div layout="row">
