@@ -1,11 +1,11 @@
 <md-list class="feed">
    <md-list-item class="md-3-line" ng-repeat="post in feed" ng-class="{'is-new': post.isNew}">
-		   <a msp-profile-link="{{post.user.username}}" href="#">
+		   <a msp-profile-link="timeline/{{post.user.username}}" href="#">
             <img ng-src="{{post.user.avatar}}" class="md-avatar" alt="Riten Vagadiya" />      
          </a>
 			<div class="md-list-item-text" layout="column">
    		  	<h3 class="user">
-   		  		<a msp-profile-link="{{post.user.username}}" href="#">{{post.user.name}}</a>
+   		  		<a msp-profile-link="timeline/{{post.user.username}}" href="#">{{post.user.name}}</a>
    		  	</h3>
    		  	<p ng-if="!post.type" class="content">
    		  		{{post.content}}
