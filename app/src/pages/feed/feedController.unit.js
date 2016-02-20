@@ -8,8 +8,8 @@ describe('feedController tests', function() {
     "name": "Riten Vagadiya",
     "position": "JavaScript Engineer",
     "location": "Dubai",
-    "avatar": "/content/avatar-riten.jpg",
-    "cover": "/content/cover-photo1.jpg"
+    "avatar": "content/avatar-riten.jpg",
+    "cover": "content/cover-photo1.jpg"
   };
 
   beforeEach(module(function ($provide) {

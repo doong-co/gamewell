@@ -11,8 +11,8 @@ describe('postServices tests', function() {
         "name": "Superman",
         "position": "World Saviour",
         "location": "Metropolis",
-        "avatar": "/content/superman.jpg",
-        "cover": "/content/cover-photo4.jpg"
+        "avatar": "content/superman.jpg",
+        "cover": "content/cover-photo4.jpg"
       },
       "content": "Superman is often shown to have flawless, eidetic Memory of everything he has ever seen, read, heard, or otherwise experienced. In most portrayals, Superman is capable of multilingualism and is able to learn, speak and understand any language he comes in contact with.",
       "likes": 300
@@ -23,8 +23,8 @@ describe('postServices tests', function() {
         "name": "Riten Vagadiya",
         "position": "JavaScript Engineer",
         "location": "Dubai",
-        "avatar": "/content/avatar-riten.jpg",
-        "cover": "/content/cover-photo1.jpg"
+        "avatar": "content/avatar-riten.jpg",
+        "cover": "content/cover-photo1.jpg"
       },
       "content": "While most authors prefer to portray him as a brawler in combat, relying more on the magnitude of his powers for victory rather than any real martial prowess, there have been some exceptions.",
       "likes": 0
@@ -35,8 +35,8 @@ describe('postServices tests', function() {
         "name": "Riten Vagadiya",
         "position": "JavaScript Engineer",
         "location": "Dubai",
-        "avatar": "/content/avatar-riten.jpg",
-        "cover": "/content/cover-photo1.jpg"
+        "avatar": "content/avatar-riten.jpg",
+        "cover": "content/cover-photo1.jpg"
       },
       "content": "The ability to inhale and exhale huge volumes of air with great force, capable of extinguishing large fires and moving heavy objects such as cars. Super-breath also allows Superman to hold his breath for extended periods in airless environments.",
       "likes": 4
@@ -49,8 +49,8 @@ describe('postServices tests', function() {
       "name": "Riten Vagadiya",
       "position": "JavaScript Engineer",
       "location": "Dubai",
-      "avatar": "/content/avatar-riten.jpg",
-      "cover": "/content/cover-photo1.jpg"
+      "avatar": "content/avatar-riten.jpg",
+      "cover": "content/cover-photo1.jpg"
     },
     "content": "While most authors prefer to portray him as a brawler in combat, relying more on the magnitude of his powers for victory rather than any real martial prowess, there have been some exceptions.",
     "likes": 0

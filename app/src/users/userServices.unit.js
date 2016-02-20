@@ -10,32 +10,32 @@ describe('userServices tests', function() {
       "name": "Clark Kent",
       "position": "Reporter",
       "location": "Metropolis",
-      "avatar": "/content/clark-kent.jpg",
-      "cover": "/content/cover-photo2.jpg"
+      "avatar": "content/clark-kent.jpg",
+      "cover": "content/cover-photo2.jpg"
     },
     {
       "username": "kal",
       "name": "Kal El",
       "position": "Alien Soul",
       "location": "Krypton",
-      "avatar": "/content/kal-el.jpg",
-      "cover": "/content/cover-photo3.png"
+      "avatar": "content/kal-el.jpg",
+      "cover": "content/cover-photo3.png"
     },
     {
       "username": "superman",
       "name": "Superman",
       "position": "World Saviour",
       "location": "Metropolis",
-      "avatar": "/content/superman.jpg",
-      "cover": "/content/cover-photo4.jpg"
+      "avatar": "content/superman.jpg",
+      "cover": "content/cover-photo4.jpg"
     },
     {
       "username": "ritenv",
       "name": "Riten Vagadiya",
       "position": "JavaScript Engineer",
       "location": "Dubai",
-      "avatar": "/content/avatar-riten.jpg",
-      "cover": "/content/cover-photo1.jpg"
+      "avatar": "content/avatar-riten.jpg",
+      "cover": "content/cover-photo1.jpg"
     }
   ];
 
@@ -44,8 +44,8 @@ describe('userServices tests', function() {
     "name": "Riten Vagadiya",
     "position": "JavaScript Engineer",
     "location": "Dubai",
-    "avatar": "/content/avatar-riten.jpg",
-    "cover": "/content/cover-photo1.jpg"
+    "avatar": "content/avatar-riten.jpg",
+    "cover": "content/cover-photo1.jpg"
   };
 
   /**

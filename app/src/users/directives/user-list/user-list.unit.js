@@ -9,8 +9,8 @@ describe('<msp-user-list> tests', function() {
       "name": "Clark Kent",
       "position": "Reporter",
       "location": "Metropolis",
-      "avatar": "/content/clark-kent.jpg",
-      "cover": "/content/cover-photo2.jpg"
+      "avatar": "content/clark-kent.jpg",
+      "cover": "content/cover-photo2.jpg"
     }
   ];
 

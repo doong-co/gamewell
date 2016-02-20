@@ -3,7 +3,7 @@ describe('<msp-profile-avatar> tests', function() {
 
   var element, scope, compile;
 
-  var mockAvatar = '/content/clark-kent.jpg';
+  var mockAvatar = 'content/clark-kent.jpg';
 
   /**
    * Load our view

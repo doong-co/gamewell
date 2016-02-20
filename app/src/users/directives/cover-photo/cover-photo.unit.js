@@ -3,7 +3,7 @@ describe('<msp-cover-photo> tests', function() {
 
   var element, scope, compile;
 
-  var mockPhoto = '/content/cover-photo2.jpg';
+  var mockPhoto = 'content/cover-photo2.jpg';
 
   /**
    * Load our view

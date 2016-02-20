@@ -10,8 +10,8 @@ describe('<msp-post-writer> tests', function() {
       "name": "Superman",
       "position": "World Saviour",
       "location": "Metropolis",
-      "avatar": "/content/superman.jpg",
-      "cover": "/content/cover-photo4.jpg"
+      "avatar": "content/superman.jpg",
+      "cover": "content/cover-photo4.jpg"
     },
     "content": "Superman is often shown to have flawless, eidetic Memory of everything he has ever seen, read, heard, or otherwise experienced. In most portrayals, Superman is capable of multilingualism and is able to learn, speak and understand any language he comes in contact with.",
     "likes": 300

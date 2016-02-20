@@ -10,8 +10,8 @@ describe('<msp-post-list> tests', function() {
         "name": "Clark Kent",
         "position": "Reporter",
         "location": "Metropolis",
-        "avatar": "/content/clark-kent.jpg",
-        "cover": "/content/cover-photo2.jpg"
+        "avatar": "content/clark-kent.jpg",
+        "cover": "content/cover-photo2.jpg"
       },
       "content": "Superman's powers rely on his cells' ability to absorb and metabolize solar energy from yellow stars like Earth's sun.",
       "likes": 0
@@ -25,8 +25,8 @@ describe('<msp-post-list> tests', function() {
         "name": "Riten Vagadiya",
         "position": "JavaScript Engineer",
         "location": "Dubai",
-        "avatar": "/content/avatar-riten.jpg",
-        "cover": "/content/cover-photo1.jpg"
+        "avatar": "content/avatar-riten.jpg",
+        "cover": "content/cover-photo1.jpg"
       },
       "content": "While most authors prefer to portray him as a brawler in combat, relying more on the magnitude of his powers for victory rather than any real martial prowess, there have been some exceptions.",
       "likes": 0
@@ -39,8 +39,8 @@ describe('<msp-post-list> tests', function() {
       "name": "Superman",
       "position": "World Saviour",
       "location": "Metropolis",
-      "avatar": "/content/superman.jpg",
-      "cover": "/content/cover-photo4.jpg"
+      "avatar": "content/superman.jpg",
+      "cover": "content/cover-photo4.jpg"
     },
     "content": "Superman is often shown to have flawless, eidetic Memory of everything he has ever seen, read, heard, or otherwise experienced. In most portrayals, Superman is capable of multilingualism and is able to learn, speak and understand any language he comes in contact with.",
     "likes": 300
