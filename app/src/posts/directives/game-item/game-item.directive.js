@@ -25,6 +25,8 @@
               element.removeClass('fullscreen');
             }
           });
+
+
           
         }
       }
@@ -69,6 +71,13 @@
                 scope.canPlayGame = false;
               });
             }
+          });
+
+          element.css('min-height', '500px');
+          element.height($(window).height() - 200);
+
+          $(window).resize(function() {
+            element.height($(window).height() - 200);
           });
 
           function trustUrl(url) {
