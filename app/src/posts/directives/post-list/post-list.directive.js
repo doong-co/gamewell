@@ -21,7 +21,7 @@
                   post._howLongAgo = moment(post.createdAt).fromNow();
                 }
                 else {
-                  post._howLongAgo = 'A lifetime ago';
+                  post._howLongAgo = 'a lifetime ago';
                 }
               }
               
