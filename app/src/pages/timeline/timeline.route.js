@@ -6,7 +6,7 @@
 
   function feedRoutes($routeProvider, $locationProvider, $q){
     $routeProvider
-      .when('/:user', {
+      .when('/timeline/:user', {
         templateUrl: 'src/pages/timeline/timeline.view.html',
         // reloadOnSearch: false,
         controller: 'msp.pages.timeline.main',

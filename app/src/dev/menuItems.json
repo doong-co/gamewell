@@ -7,7 +7,12 @@
   {
     "title": "Timeline",
     "pageType": "timeline",
-    "href": "#/me"
+    "href": "#/timeline/me"
+  },
+  {
+    "title": "Publish game",
+    "pageType": "publish_game",
+    "href": "#/publish_game"
   },
   {
     "title": "Logout",
