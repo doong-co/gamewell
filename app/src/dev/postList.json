@@ -11,7 +11,8 @@
     "content": {
       "thumbnail": "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/4373/45093/ESR5DQ-image-50.jpg",
       "url": "http://s3-eu-west-1.amazonaws.com/apps.playcanvas.com/TwvzLuxT/index.html",
-      "name": "Tanx"
+      "name": "Tanx",
+      "desc": "TANX is an online, multiplayer tank battle game. Battle opponents from across the world. The first team to destroy 32 enemy tanks wins the game! Play on mobile or desktop. Made with love using the awesome PlayCanvas Game Engine!"
     },
     "likes": 0,
     "type": 1
@@ -28,7 +29,9 @@
     "content": {
       "thumbnail": "http://screenshots.en.sftcdn.net/en/scrn/69675000/69675536/flappy-bird-04-700x393.jpg",
       "url": "http://playcanv.as/p/2OlkUaxF",
-      "name": "Flappy Bird"
+      "name": "Flappy Bird",
+      "desc": "Flappy Bird is..., well, Flappy Bird"
+
     },    
     "likes": 0,
     "type": 1
@@ -45,7 +48,8 @@
     "content": {
       "thumbnail": "http://cdn.akamai.steamstatic.com/steam/apps/368340/ss_9f5b4cac0765bebf82011fff982e8bfd94db4315.600x338.jpg?t=1454880182",
       "url": "http://www.cross-code.com/en/start",
-      "name": "Cross Code"
+      "name": "Cross Code",
+      "desc": "Meet Lea as she logs into an MMO of the distant future. Follow her steps as she discovers a vast world, meets other players and overcomes all the challenges of the game."
     },    
     "likes": 4,
     "type": 1
@@ -62,7 +66,8 @@
     "content": {
       "thumbnail": "http://www.inciagario.com/1200x630.png",
       "url": "http://agar.io",
-      "name": "agar.io"
+      "name": "agar.io",
+      "desc": "Control your tiny cell and eat other players to grow larger! But watch out: players bigger than you will be trying to make you their lunch. Survive and eat long enough to become the biggest cell in the game!"
     },    
     
     "likes": 92,
@@ -80,7 +85,8 @@
     "content": {
       "thumbnail": "http://cdn.tutorialzine.com/wp-content/uploads/2015/01/missilegame-1024x640.jpg",
       "url": "http://missile-game.bwhmather.com/",
-      "name": "Missle Game"
+      "name": "Missle Game",
+      "desc": "Have you ever wondered what it's like to shoot out of a cannon? This is like that, except you have to dodge a bunch of crap or else you'll explode. Can you make it out intact?"
     },    
     
     "likes": 40,
@@ -98,7 +104,8 @@
     "content": {
       "thumbnail": "http://img.cdn.famobi.com/portal/html5games/images/tmp/ArcadeGolfNeonTeaser.jpg?v=0.1.32-1068e84e",
       "url": "http://play.famobi.com/arcade-golf-neon",
-      "name": "Arcade Golf Neon"
+      "name": "Arcade Golf Neon",
+      "desc": "Become king of the swing in this minimalist golf game in retro design! Select your game mode and complete the course with the fewest number of strokes. Aim for the hole and drag and release to hit the ball. Can you make a hole-in-one and set a new record?" 
     },
     
     "likes": 4,

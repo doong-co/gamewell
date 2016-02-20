@@ -174,7 +174,7 @@ Post-list Styles
   min-height: 30rem;
 }
 .feed md-list-item.md-3-line .md-list-item-text div.content.game .thumbnail {
-  margin: 3rem auto;
+  background-color: #fff
 }
 .feed md-list-item.md-3-line .md-list-item-text div.content.game .thumbnail img {
   max-height: 100%;

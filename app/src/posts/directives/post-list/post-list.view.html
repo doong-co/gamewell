@@ -1,5 +1,6 @@
 <md-list class="feed">
-   <md-list-item class="md-3-line" ng-repeat="post in feed" ng-class="{'is-new': post.isNew}">
+   <md-list-item class="md-3-line" ng-repeat="post in feed" ng-class="{'is-new': post.isNew}" 
+      style="margin-top:15px">
 		   <a msp-profile-link="timeline/{{post.user.username}}" href="#">
             <img ng-src="{{post.user.avatar}}" class="md-avatar" alt="Riten Vagadiya" />      
          </a>
@@ -18,7 +19,9 @@
    		  	<p ng-if="post.type !== 1" class="content">
    		  		{{post.content}}
    		  	</p>
-            
+            <p ng-if="post.type === 1" class="content" style="font-weight:200">
+               {{post.content.desc}}
+            </p>
             <kdq-game-item class="content game" kdq-game="post.content" ng-if="post.type === 1"></kdq-game-item>
    		  	<p class="actions" msp-ripple>
    		  		<a><md-icon md-svg-src="assets/svg/thumb.svg"></md-icon> Like ({{post.likes}})</a>
