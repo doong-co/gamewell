@@ -76,15 +76,21 @@
               scope.feed.unshift(post);
             }
 
+
+            var loadingPosts = false;
             $(window).scroll(function() {
-              if($(window).scrollTop() === $(document).height() - $(window).height()) {
+              if(!loadingPosts && $(document).height() - $(window).scrollTop() - $(window).height() < $(window).height() * 2) {
+                console.log('loading new posts');
+                loadingPosts = true;
                 postServices
                   .loadFeed()
                   .then(function(posts) {
+                    loadingPosts = false; 
                     _.each(posts, function(post) {
                       scope.feed.push(post);
                     });
                   });
+
               }
             });
           }

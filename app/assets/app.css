@@ -209,15 +209,16 @@ Post-list Styles
   color: #58718B;
   display: inline-block;
   padding: 3px 5px;
-  border: 1px dotted #ccc;
+  /*border: 1px dotted #ccc;*/
 }
 .feed .actions a md-icon {
-  color: #58718B;
+  color: inherit;
   width: 18px;
   height: 18px;
 }
 .feed .actions a:hover {
-  border: 1px solid;
+  /*border: 1px solid;*/
+  color: #265789
 }
 
 .fullname {
