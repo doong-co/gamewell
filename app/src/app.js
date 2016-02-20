@@ -10,7 +10,7 @@
 	          .primaryPalette('teal')
 	          .accentPalette('red');
       })
-      .value('API_URL', 'http://localhost:1337');
+      .value('API_URL', window.location.protocol + '//' + window.location.hostname + ':1337');
 
 
 })();
