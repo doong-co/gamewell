@@ -2,9 +2,9 @@
   'use strict';
 
   angular.module('msp.posts')
-         .service('msp.posts.services', ['$q', '$resource', postServices]);
+         .service('msp.posts.services', ['$q', '$resource', 'API_URL', postServices]);
 
-  function postServices($q, $resource) {
+  function postServices($q, $resource, API_URL) {
 
     /**
      * A local list of all subscribed listeners for new post creation
@@ -18,7 +18,15 @@
        * @return   {Promise}          A promise that resolves to an array
        */
       loadFeed : function() {
-        return endPoints().list.query().$promise;
+        var deferred = $q.defer();
+
+        endPoints().list.query(function(postList) {
+          endPoints().post.query(function(posts) {
+            deferred.resolve(posts.concat(postList));
+          });
+        });
+
+        return deferred.promise;
       },
 
       /**
@@ -70,7 +78,6 @@
         });
         return deferred.promise;
       },
-
       /**
        * A custom event handler
        * @param    {String}          ev The event name
@@ -92,6 +99,7 @@
     function endPoints() {
       return {
         list: $resource('src/dev/postList.json'),
+        post: $resource(API_URL + '/post'),
         newPost: $resource('src/dev/newPost.json')
       }
     }

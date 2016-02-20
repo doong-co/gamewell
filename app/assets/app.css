@@ -4,6 +4,10 @@ Common Styles
 ==========================
 **/
 
+md-toast {
+  position: fixed;
+}
+
 body.game-fullscreen {
   overflow: hidden;
 }

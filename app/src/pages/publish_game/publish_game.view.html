@@ -17,33 +17,33 @@
         </div>
         <!-- The post list -->
         <!-- <msp-post-list ng-if="page.activeUser" type="timeline" user="{{page.activeUser.username}}"></msp-post-list> -->
-        <form name="projectForm">
+        <form ng-submit="page.submit()" name="projectForm">
           <div layout-gt-sm="row">
             <md-input-container class="md-block" flex-gt-sm>
               <label>Game name</label>
-              <input required name="gameName" ng-model="project.gameName">
-              <div ng-messages="projectForm.gameName.$error">
+              <input required name="name" ng-model="page.project.name">
+              <div ng-messages="projectForm.name.$error">
                 <div ng-message="required">This is required.</div>
               </div>
             </md-input-container>
             <md-input-container class="md-block" flex-gt-sm>
               <label>Game url</label>
-              <input required name="gameUrl" ng-model="project.gameUrl">
-              <div ng-messages="projectForm.gameUrl.$error">
+              <input required name="url" ng-model="page.project.url">
+              <div ng-messages="projectForm.url.$error">
                 <div ng-message="required">This is required.</div>
               </div>
             </md-input-container>
           </div>
           <md-input-container class="md-block">
             <label>Description</label>
-            <textarea name="description" md-maxlength="350" rows="5" ng-model="project.description"></textarea>
-            <div ng-messages="projectForm.description.$error">
+            <textarea name="desc" md-maxlength="350" rows="5" ng-model="page.project.desc"></textarea>
+            <div ng-messages="projectForm.desc.$error">
               <div ng-message="md-maxlength">The name has to be less than 300 characters long.</div>
             </div>
           </md-input-container>
           <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
             <div flex></div>
-            <md-button class="md-raised md-primary">Submit</md-button>
+            <md-button type="submit" class="md-raised md-primary">Submit</md-button>
             <md-button href="#/" class="md-raised">Cancel</md-button>
           </section>
         </form>

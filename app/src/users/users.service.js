@@ -2,9 +2,9 @@
   'use strict';
 
   angular.module('msp.users')
-         .service('msp.users.services', ['$q', '$resource', userServices]);
+         .service('msp.users.services', ['$q', '$resource', 'API_URL', userServices]);
 
-  function userServices($q, $resource) {
+  function userServices($q, $resource, API_URL) {
 
     return {
       /**
@@ -44,6 +44,15 @@
        */
       loadCurrentUser: function() {
         return endPoints().currentUser.get().$promise;
+      },
+      publishGame: function(post) {
+        var deferred = $q.defer();
+        endPoints().publishGame.save(post, function(post) {
+          deferred.resolve(post);
+        }, function(error) {
+          deferred.reject(error);
+        });
+        return deferred.promise;
       }
     };
 
@@ -55,7 +64,8 @@
       return {
         list: $resource('src/dev/userList.json'),
         friends: $resource('src/dev/friendList.json'),
-        currentUser: $resource('src/dev/currentUser.json')
+        currentUser: $resource('src/dev/currentUser.json'),
+        publishGame: $resource(API_URL + '/post')
       }
     }
 

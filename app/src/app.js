@@ -9,7 +9,8 @@
 	      $mdThemingProvider.theme('default')
 	          .primaryPalette('teal')
 	          .accentPalette('red');
-      });
+      })
+      .value('API_URL', 'http://localhost:1337');
 
 
 })();
