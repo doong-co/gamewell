@@ -75,6 +75,18 @@
                */
               scope.feed.unshift(post);
             }
+
+            $(window).scroll(function() {
+              if($(window).scrollTop() === $(document).height() - $(window).height()) {
+                postServices
+                  .loadFeed()
+                  .then(function(posts) {
+                    _.each(posts, function(post) {
+                      scope.feed.push(post);
+                    });
+                  });
+              }
+            });
           }
         }
     ]);
