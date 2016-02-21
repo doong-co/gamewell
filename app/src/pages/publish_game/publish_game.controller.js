@@ -36,8 +36,13 @@
     function submitGame() {
       if(!self.thumbnailFile[0]) {
         alert('A teaser image is required.')
+       
         return;
       }
+      if(self.thumbnailFile[0].lfFile.size > 10000000) {
+          alert('Your image should be smaller than 10Mb');
+          return;
+        } 
 
       if(self.canUploadGame) {
         if(self.gameFile[0]) {
@@ -102,10 +107,16 @@
             });
         }, false);
         if(self.thumbnailFile[0]) {
-          reader.readAsDataURL(self.thumbnailFile[0].lfFile);  
+          if(self.thumbnailFile[0].lfFile.size > 10000000) {
+            alert('Your image should be smaller than 10Mb');
+          }
+          else {
+            reader.readAsDataURL(self.thumbnailFile[0].lfFile);    
+          }
+          
         }
         else {
-          alert('A teaser image is required.')
+          alert('A teaser image is required.');
         }
         
       } else {
