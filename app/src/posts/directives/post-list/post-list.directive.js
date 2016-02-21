@@ -126,15 +126,16 @@
               if(!loadingPosts && $(document).height() - $(window).scrollTop() - $(window).height() < $(window).height() * 2) {
                 console.log('loading new posts');
                 loadingPosts = true;
-                postServices
-                  .loadFeed()
-                  .then(function(posts) {
-                    loadingPosts = false; 
-                    _.each(posts, function(post) {
-                      scope.feed.push(post);
+                if(scope.pageType === 'feed') {
+                  postServices
+                    .loadFeed()
+                    .then(function(posts) {
+                      loadingPosts = false; 
+                      _.each(posts, function(post) {
+                        scope.feed.push(post);
+                      });
                     });
-                  });
-
+                }
               }
             });
           }
