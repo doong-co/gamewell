@@ -32,20 +32,35 @@
       });
 
     function submitGame() {
+      
+      if(self.canUploadGame) {
+        userServices.uploadGame(self.gameFile[0].lfFile)
+          .then(function(gameUrl) {
+            self.project.url = gameUrl;
+            publishGame();
+          });
+      } else {
+        publishGame();
+      }
+      
+    }
+
+    function publishGame() {
       var post = {
         user: self.activeUser,
         content: self.project,
         type: 1
       };
+
       if(self.thumbnailFile) {
         var reader  = new FileReader();
         reader.addEventListener("load", function () {
           post.content.thumbnail = reader.result;
           userServices.publishGame(post)
-          .then(function(post) {
-            $mdToast.showSimple(post.content.name + ' published');
-            $location.url('/'); //go to feed
-          });
+            .then(function(post) {
+              $mdToast.showSimple(post.content.name + ' published');
+              $location.url('/'); //go to feed
+            });
         }, false);
         reader.readAsDataURL(self.thumbnailFile[0].lfFile);
       } else {

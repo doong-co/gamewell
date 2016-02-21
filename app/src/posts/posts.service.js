@@ -107,7 +107,6 @@
         var deferred = $q.defer();
 
         endPoints().comment.save(comment, function(newComment) {
-          debugger;
           deferred.resolve();
         }, function() {
           deferred.reject();

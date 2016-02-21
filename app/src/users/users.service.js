@@ -1,17 +1,17 @@
-(function(){
+(function() {
   'use strict';
 
   angular.module('msp.users')
-         .service('msp.users.services', ['$q', '$resource', 'API_URL', userServices]);
+    .service('msp.users.services', ['$q', '$resource', '$http', 'API_URL', userServices]);
 
-  function userServices($q, $resource, API_URL) {
+  function userServices($q, $resource, $http, API_URL) {
 
     return {
       /**
        * List of users
        * @return   {Promise}          A promise that resolves to an array
        */
-      loadFriends : function() {
+      loadFriends: function() {
         return endPoints().friends.query().$promise;
       },
 
@@ -52,6 +52,24 @@
         }, function(error) {
           deferred.reject(error);
         });
+        return deferred.promise;
+      },
+      uploadGame: function(gameFile) {
+        var deferred = $q.defer();
+
+        var fd = new FormData();
+        fd.append('game', gameFile);
+        $http.post(API_URL + '/post/upload/game', fd, {
+          transformRequest: angular.identity,
+          headers: { 'Content-Type': undefined }
+        })
+        .success(function(data) {
+          deferred.resolve(API_URL + '/games/' + data.gameId);
+        })
+        .error(function(error) {
+
+        });
+
         return deferred.promise;
       }
     };

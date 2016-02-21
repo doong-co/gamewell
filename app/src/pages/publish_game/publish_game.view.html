@@ -19,33 +19,41 @@
         <!-- <msp-post-list ng-if="page.activeUser" type="timeline" user="{{page.activeUser.username}}"></msp-post-list> -->
         <form ng-submit="page.submit()" name="projectForm">
           <div layout-gt-sm="row">
-            <md-input-container class="md-block" flex-gt-sm>
-              <label>Game name</label>
-              <input required name="name" ng-model="page.project.name">
-              <div ng-messages="projectForm.name.$error">
-                <div ng-message="required">This is required.</div>
-              </div>
-            </md-input-container>
-            <md-input-container class="md-block" flex-gt-sm>
-              <label>Game url</label>
-              <input required name="url" ng-model="page.project.url">
-              <div ng-messages="projectForm.url.$error">
-                <div ng-message="required">This is required.</div>
-              </div>
-            </md-input-container>
-          </div>
-          <md-input-container class="md-block">
-            <label>Description</label>
-            <textarea name="desc" md-maxlength="350" rows="5" ng-model="page.project.desc"></textarea>
-            <div ng-messages="projectForm.desc.$error">
-              <div ng-message="md-maxlength">The name has to be less than 300 characters long.</div>
+            <div flex-gt-sm>
+              <md-input-container class="md-block">
+                <label>Game name</label>
+                <input required name="name" ng-model="page.project.name">
+                <div ng-messages="projectForm.name.$error">
+                  <div ng-message="required">This is required.</div>
+                </div>
+              </md-input-container>
+              <md-input-container class="md-block">
+                <label>Description</label>
+                <textarea name="desc" md-maxlength="350" rows="5" ng-model="page.project.desc"></textarea>
+                <div ng-messages="projectForm.desc.$error">
+                  <div ng-message="md-maxlength">The name has to be less than 300 characters long.</div>
+                </div>
+              </md-input-container>
+              <md-input-container class="md-block" flex-gt-sm>
+                <lf-ng-md-file-input name="thumbnail" lf-placeholder="Upload a splash image" lf-files="page.thumbnailFile"></lf-ng-md-file-input>
+              </md-input-container>
             </div>
-          </md-input-container>
-          <div layout-gt-sm="row">
-            <md-input-container class="md-block" flex-gt-sm>
-              <lf-ng-md-file-input name="thumbnail" lf-placeholder="Upload a splash image" lf-files="page.thumbnailFile"></lf-ng-md-file-input>
-            </md-input-container>
-            <div flex-gt-sm></div>
+            <div flex-gt-sm>
+              <md-input-container class="md-block" ng-if="!page.canUploadGame">
+                <label>Game url</label>
+                <input required name="url" ng-model="page.project.url">
+                <div ng-messages="projectForm.url.$error">
+                  <div ng-message="required">This is required.</div>
+                </div>
+              </md-input-container>
+              <md-input-container class="md-block" ng-if="page.canUploadGame">
+                <lf-ng-md-file-input name="game" lf-placeholder="Upload game" lf-files="page.gameFile"></lf-ng-md-file-input>
+              </md-input-container>
+              <md-switch ng-model="page.canUploadGame">
+                <span ng-if="!page.canUploadGame">Switch to upload game</span>
+                <span ng-if="page.canUploadGame">Switch to add game url</span>
+              </md-switch>
+            </div>
           </div>
           <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
             <div flex></div>
