@@ -29,10 +29,10 @@
       <p class="actions" msp-ripple>
         <a ng-click="like(post)">
           <md-icon md-svg-src="assets/svg/thumb.svg"></md-icon> Like <span ng-if="post.likes > 0">({{post.likes}})</span></a>
-        <a ng-click="post._commenting = !post._commenting">
+        <a ng-click="post._commentingOff = !post._commentingOff">
           <md-icon md-svg-src="assets/svg/post.svg"></md-icon> Comment <span ng-if="post.comments.length">({{post.comments.length}})</span></a>
       </p>
-      <div class="content" ng-if="post._commenting">
+      <div class="content" ng-if="!post._commentingOff">
         <form name="commentForm" novalidate ng-submit="comment(post)">
           <md-input-container md-no-float class="md-block">
             <label>Write a comment...</label>
