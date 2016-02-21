@@ -8,7 +8,9 @@
 module.exports = {
 
   attributes: {
-    
+    comments: {
+      colection: 'comment'
+    }
   }
 };
 

@@ -26,6 +26,9 @@
               endPoints().like.query({post: post.id}, function(likes) {
                 post.likes = likes.length;
               });
+              endPoints().comment.query({post: post.id}, function(comments) {
+                post.comments = comments;
+              });
             });
             deferred.resolve(posts.concat(postList));
           }, function() {
@@ -100,6 +103,18 @@
 
         return deferred.promise;
       },
+      comment: function(comment) {
+        var deferred = $q.defer();
+
+        endPoints().comment.save(comment, function(newComment) {
+          debugger;
+          deferred.resolve();
+        }, function() {
+          deferred.reject();
+        });
+
+        return deferred.promise;
+      },
       /**
        * A custom event handler
        * @param    {String}          ev The event name
@@ -123,6 +138,7 @@
         list: $resource('src/dev/postList.json'),
         post: $resource(API_URL + '/post?sort=createdAt%20DESC'),
         like: $resource(API_URL + '/like'),
+        comment: $resource(API_URL + '/comment?sort=createdAt%20DESC'),
         newPost: $resource('src/dev/newPost.json')
       }
     }

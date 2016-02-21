@@ -1,13 +1,11 @@
 <md-list class="feed">
-  
-   <md-list-item class="md-3-line" ng-repeat="post in feed" ng-class="{'is-new': post.isNew}" 
-      style="margin-top:15px">
-		   <a msp-profile-link="timeline/{{post.user.username}}" href="#">
-            <img ng-src="{{post.user.avatar}}" class="md-avatar" alt="Riten Vagadiya" />      
-         </a>
-			<div class="md-list-item-text" layout="column">
-   		  	<h3 class="user">
-   		  		<strong>
+  <md-list-item class="md-3-line" ng-repeat="post in feed" ng-class="{'is-new': post.isNew}" style="margin-top:15px">
+    <a msp-profile-link="timeline/{{post.user.username}}" href="#">
+      <img ng-src="{{post.user.avatar}}" class="md-avatar" alt="Riten Vagadiya" />
+    </a>
+    <div class="md-list-item-text" layout="column">
+      <h3 class="user">
+            <strong>
                   <a msp-profile-link="timeline/{{post.user.username}}" href="#">{{post.user.name}}</a>
                </strong> 
                <span style="color: gray">
@@ -17,37 +15,46 @@
                   {{post.content.name}}
                </strong>
                
-   		  	</h3>
-          <p style="font-weight:200; font-size:11px; 
+          </h3>
+      <p style="font-weight:200; font-size:11px; 
             margin-top: 8px;
             margin-bottom: 10px;">{{getHowLongAgo(post)}}</p>
-   		  	<p ng-if="post.type !== 1" class="content" >
-   		  		{{post.content}}
-   		  	</p>
-            
-            <p ng-if="post.type === 1" class="content" style="font-weight:200">
-               {{post.content.desc}}
-            </p>
-            <kdq-game-item class="content game" kdq-game="post.content" ng-if="post.type === 1"></kdq-game-item>
-   		  	<p class="actions" msp-ripple>
-   		  		<a ng-click="like(post)"><md-icon md-svg-src="assets/svg/thumb.svg"></md-icon> Like <span ng-if="post.likes > 0">({{post.likes}})</span></a>
-   		  		<a ng-click="post._commenting = !post._commenting"><md-icon md-svg-src="assets/svg/post.svg"></md-icon> Comment <span ng-if="post.comments.length" >({{post.comments.length}})</span></a>
-   		  	</p>
-            <div class="content" ng-if="post._commenting">
-               <md-content>
-    <md-list role="list">
-      
-      <!-- : item in todos -->
-      <md-list-item ng-repeat="comment in post.comments" class="md-3-line md-no-proxy ng-scope" role="listitem">
-        <img ng-src="{{comment.user.avatar}}" class="md-avatar"
-        style="margin-top:0">
-        <div class="md-list-item-text layout-column" layout="column">
-          <h3 class="ng-binding" ng-bind="comment.user.name"></h3>
-          <p class="ng-binding" ng-bind="comment.content"></p>
-        </div>
-      </md-list-item>
-
+      <p ng-if="post.type !== 1" class="content">
+        {{post.content}}
+      </p>
+      <p ng-if="post.type === 1" class="content" style="font-weight:200">
+        {{post.content.desc}}
+      </p>
+      <kdq-game-item class="content game" kdq-game="post.content" ng-if="post.type === 1"></kdq-game-item>
+      <p class="actions" msp-ripple>
+        <a ng-click="like(post)">
+          <md-icon md-svg-src="assets/svg/thumb.svg"></md-icon> Like <span ng-if="post.likes > 0">({{post.likes}})</span></a>
+        <a ng-click="post._commenting = !post._commenting">
+          <md-icon md-svg-src="assets/svg/post.svg"></md-icon> Comment <span ng-if="post.comments.length">({{post.comments.length}})</span></a>
+      </p>
+      <div class="content" ng-if="post._commenting">
+        <form name="commentForm" novalidate ng-submit="comment(post)">
+          <md-input-container md-no-float class="md-block">
+            <label>Write a comment...</label>
+            <input name="comment" md-maxlength="350" rows="5" ng-model="comment.content">
+            <div ng-messages="commentForm.comment.$error">
+              <div ng-message="md-maxlength">The name has to be less than 300 characters long.</div>
             </div>
-			</div>
-	</md-list-item>
+          </md-input-container>
+        </form>
+        <md-content>
+          <md-list role="list">
+            <!-- : item in todos -->
+            <md-list-item ng-repeat="comment in post.comments" class="md-3-line md-no-proxy ng-scope" role="listitem">
+              <img ng-src="{{comment.user.avatar}}" class="md-avatar" style="margin-top:0">
+              <div class="md-list-item-text layout-column" layout="column">
+                <h3 class="ng-binding" ng-bind="comment.user.name"></h3>
+                <p class="ng-binding" ng-bind="comment.content"></p>
+              </div>
+            </md-list-item>
+          </md-list>
+        </md-content>
+      </div>
+    </div>
+  </md-list-item>
 </md-list>

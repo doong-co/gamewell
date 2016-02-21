@@ -5,7 +5,8 @@
     .directive('mspPostList', [
       '$timeout',
       'msp.posts.services',
-      function($timeout, postServices) {
+      'msp.users.services',
+      function($timeout, postServices, userServices) {
           return {
             templateUrl: viewTemplate,
             restrict: 'E',
@@ -35,6 +36,26 @@
                 }, function() {
                   
                 });
+            }
+
+            scope.comment = function(post) {
+              userServices.loadCurrentUser().then(function(currentUser) {
+                var comment = {
+                  user: currentUser,
+                  post: post.id,
+                  content: scope.comment.content
+                }
+
+                postServices.comment(comment)
+                  .then(function() {
+                    var comments = post.comments || []
+                    comments.push(comment);
+                    post.comments = comments;
+                    scope.comment.content = '';
+                  }, function() {
+
+                  });
+              });
             }
 
             /**
