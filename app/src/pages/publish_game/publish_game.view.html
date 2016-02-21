@@ -35,12 +35,12 @@
                 </div>
               </md-input-container>
               <md-input-container class="md-block" flex-gt-sm>
-                <lf-ng-md-file-input name="thumbnail" lf-placeholder="Upload a splash image" lf-files="page.thumbnailFile"></lf-ng-md-file-input>
+                <lf-ng-md-file-input name="thumbnail" lf-placeholder="Upload a teaser image" lf-files="page.thumbnailFile"></lf-ng-md-file-input>
               </md-input-container>
             </div>
             <div flex-gt-sm>
               <md-input-container class="md-block" ng-if="!page.canUploadGame">
-                <label>Game url</label>
+                <label>Drop a URL to where your game is hosted</label>
                 <input required name="url" ng-model="page.project.url">
                 <div ng-messages="projectForm.url.$error">
                   <div ng-message="required">This is required.</div>
@@ -50,10 +50,10 @@
                 <lf-ng-md-file-input name="game" lf-placeholder="Upload game" lf-files="page.gameFile"></lf-ng-md-file-input>
               </md-input-container>
               <md-switch ng-model="page.canUploadGame">
-                <span ng-if="!page.canUploadGame">Switch to upload game</span>
+                <span ng-if="!page.canUploadGame">Switch to upload a game folder so we can <strong>host your game</strong></span>
                 <span ng-if="page.canUploadGame">Switch to add game url</span>
               </md-switch>
-              <p>You can download an example game <a href="https://drive.google.com/file/d/0B1Dq7wma9zReb0Rja3o1c3hET2s/view?usp=sharing" target="_blank">here</a></p>
+              <p>You can download a sample game to upload <a href="https://drive.google.com/file/d/0B1Dq7wma9zReb0Rja3o1c3hET2s/view?usp=sharing" target="_blank">here</a></p>
             </div>
           </div>
           <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>

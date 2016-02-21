@@ -4,6 +4,10 @@ Common Styles
 ==========================
 **/
 
+html body .introjs-fixParent {
+  position: relative !important;
+}
+
 md-toast {
   position: fixed;
 }

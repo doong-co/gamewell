@@ -2,7 +2,8 @@
   {
     "title": "Feed",
     "pageType": "feed",
-    "href": "#/"
+    "href": "#/",
+    "active": true
   },
   {
     "title": "Timeline",
