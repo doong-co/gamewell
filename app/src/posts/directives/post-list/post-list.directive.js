@@ -28,6 +28,15 @@
               return post._howLongAgo;
             }
 
+            scope.like = function(post) {
+              postServices.like(post.id)
+                .then(function() {
+                  post.likes++;
+                }, function() {
+                  
+                });
+            }
+
             /**
              * Pass to scope
              * @type {Function}

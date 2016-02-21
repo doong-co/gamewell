@@ -30,7 +30,7 @@
             </p>
             <kdq-game-item class="content game" kdq-game="post.content" ng-if="post.type === 1"></kdq-game-item>
    		  	<p class="actions" msp-ripple>
-   		  		<a ng-click=""><md-icon md-svg-src="assets/svg/thumb.svg"></md-icon> Like <span ng-if="post.likes > 0">({{post.likes}})</span></a>
+   		  		<a ng-click="like(post)"><md-icon md-svg-src="assets/svg/thumb.svg"></md-icon> Like <span ng-if="post.likes > 0">({{post.likes}})</span></a>
    		  		<a ng-click="post._commenting = !post._commenting"><md-icon md-svg-src="assets/svg/post.svg"></md-icon> Comment <span ng-if="post.comments.length" >({{post.comments.length}})</span></a>
    		  	</p>
             <div class="content" ng-if="post._commenting">
