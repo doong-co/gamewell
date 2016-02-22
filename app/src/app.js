@@ -50,9 +50,12 @@
               };
             },
             onComplete: function() {
+              $('.md-dialog-container').css('height',$(window).innerHeight() + 'px');
               $('.md-dialog-container').css('background-color','#000');
+              $('body').css('overflow', 'hidden');
             },
             onRemoving: function() {
+              $('body').css('overflow', null);
               $mdDialog.show({
                   template:
                     '<md-dialog>' +
