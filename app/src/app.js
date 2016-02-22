@@ -12,8 +12,9 @@
       })
       .value('API_URL', window.location.protocol + '//' + window.location.hostname + ':1337')
       .run(function() {
+
         
-        $('md-toolbar [href="#/publish_game"]').attr('data-intro','Publish your game here.');
+        
       });
 
 
