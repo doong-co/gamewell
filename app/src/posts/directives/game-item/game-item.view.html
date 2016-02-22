@@ -14,11 +14,20 @@
   <div kdq-game-full-screen="canFullScreen" class="iframe-wraper" ng-if="canPlayGame" flex layout="column">
     <div layout="row">
       <div flex></div>
-      <md-button ng-click="canFullScreen = !canFullScreen" class="md-raised btn-fullscreen"><span ng-if="canFullScreen"><md-icon md-svg-src="bower_components/material-design-icons/action/svg/production/ic_launch_48px.svg" aria-label="fullscreen" style="margin-right: 5px;
-      position: relative;
-      top: -1px;"></md-icon>fullscreen</span><span ng-if="!canFullScreen"><md-icon md-svg-src="bower_components/material-design-icons/navigation/svg/production/ic_close_48px.svg" aria-label="fullscreen" style="margin-right: 5px;
-      position: relative;
-      top: -1px;"></md-icon>close</span></md-button>
+      <md-button ng-click="canFullScreen = false" class="md-raised btn-fullscreen" ng-show="canFullScreen">
+      
+        <span>
+          <md-icon md-svg-src="bower_components/material-design-icons/action/svg/production/ic_launch_48px.svg" aria-label="fullscreen" style="margin-right: 5px;
+        position: relative;
+        top: -1px;"></md-icon>fullscreen</span>
+      </md-button>
+
+      <md-button ng-click="canFullScreen = true" class="md-raised btn-fullscreen" ng-show="!canFullScreen">
+        <span><md-icon md-svg-src="bower_components/material-design-icons/navigation/svg/production/ic_close_48px.svg" aria-label="fullscreen" style="margin-right: 5px;
+        position: relative;
+        top: -1px;"></md-icon>close</span>
+
+      </md-button>
     </div>
     <iframe ng-src="{{trustUrl(game.url)}}" frameborder="0" flex></iframe>
   </div>

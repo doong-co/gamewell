@@ -40,7 +40,7 @@
             controller: GreetingController,
             onRemoving: function() {
               var interval = setInterval(function() {
-                if(window.kdqMenuInit) {
+                if($('md-toolbar .md-button[href="#/"]')[0] && $('md-toolbar .md-button[href="#/publish_game"]')[0]) {
                   clearInterval(interval) ;
                   setTimeout(function() {
                     $('md-toolbar .md-button[href="#/"]').attr('data-intro','You\'re at the Newsfeed. Scroll to a game to immediately play it.');
